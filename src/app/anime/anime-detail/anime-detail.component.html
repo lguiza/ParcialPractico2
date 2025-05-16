@@ -30,3 +30,23 @@
     </div>
   </div>
  </div>
+<div class="row">
+  <div class="col">
+    <h3>Episodes</h3>
+    <ul class="list-group">
+      <li
+        *ngFor="let episode of animeDetail.seasons"
+        class="list-group-item"
+      >
+      <div>
+        Temporada {{ season.number }}
+      </div>
+      <span class="badge bg-primary rounded-pill">
+        {{ season.episodes.length }} capítulos
+      </span>
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+
+  

@@ -2,7 +2,10 @@
   <div class="container contenedor-animes">
   <div class="row">
     <!-- COMPLETAR CON EL LLAMADO A UNA FUNCIÓN PROPIA QUE CALCULE EL RATING PROMEDIO -->
-    <p>El rating promedio es <span class="badge text-bg-primary rounded-pill"> 7.99 </span></p>
+    <p>El rating promedio es <span class="badge text-bg-primary rounded-pill"> {{ getAverageRating() | number:'1.1-2' }} </span></p>
+    
+
+
     <div *ngIf="selected">
       <app-anime-detail [animeDetail]="selectedBAnime"></app-anime-detail>
       <hr>
@@ -12,10 +15,13 @@
         <img src={{anime.img}}  alt="anime image" width=50px>
         <p>⭐{{anime.Rating}} <b>Categories: </b>{{anime.categorie}}</p>
         <!-- COMPLETAR PARA INCLUIR LA CANTIDAD DE TEMPORADAS -->
-        <p class="card-text"><b># seasons: </b>"COMPLETAR"</p>
+        <p class="card-text"><b># seasons: </b>" {{ getTotalSeasons(anime) }} "</p>
         <a href="#" (click)="onSelected(anime)">More information</a>
+
         <hr>
    </div>
 
   </div>
+  
 </div>
+
